@@ -1,7 +1,7 @@
 {
   "name": "@starbeam-dev/dev-mode",
   "type": "module",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Simple scripts to use when developing packages",
   "license": "MIT",
   "main": "src/index.js",
