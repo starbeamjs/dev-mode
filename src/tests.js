@@ -19,9 +19,14 @@ export async function tests({ cwd = process.cwd(), testDir = "tests" } = {}) {
     throw new Error(`"${root}" does not exist`);
   }
 
-  await execa("vitest", process.argv.slice(2), {
+  const result = await execa("vitest", process.argv.slice(2), {
     stdio: "inherit",
     serialization: "advanced",
     cwd: root,
+    reject: false,
   });
+
+  if (result.exitCode !== 0) {
+    process.exit(result.exitCode);
+  }
 }
